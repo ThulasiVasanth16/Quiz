@@ -1,0 +1,201 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+button {
+    padding: 8px;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: whitesmoke;
+    border: 1px solid lightgray;
+
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* wrapper for quiz menu and quiz display */
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    background: linear-gradient(to right, #f7d6e0, #ffb4a2);
+
+}
+
+/* quiz menu */
+.menu {
+    width: 325px;
+    padding: 20px;
+    min-height: 100vh;
+    background-color: white;
+    overflow-y: auto;
+}
+
+.menu input {
+    width: 90%;
+    padding: 8px 5px;
+    outline: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid lightgray;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    transition: all 0.30s ease-in-out;
+    border: 1px solid #DDDDDD;
+}
+
+.menu input:focus {
+    box-shadow: 0 0 5px #ffb4a2;
+    border: 1px solid #ffb4a2;
+}
+
+.input-group {
+    display: flex;
+}
+
+/* quiz display */
+
+.quiz-questions {
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.question {
+    width: 525px;
+    min-height: 270px;
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.results {
+    width: 525px;
+    height: 270px;
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+/* OUTPUT SUCCESS, WARNING, or INFO MESSAGES
+ The snackbar - position it at the bottom and in the middle of the screen */
+#snackbarSuccess1,
+#snackbarSuccess2,
+#snackbarWarning1,
+#snackbarWarning2,
+#snackbarInfo {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+
+#snackbarSuccess1 {
+    background-color: #ffb4a2;
+}
+
+#snackbarSuccess2 {
+    background-color: #ffb4a2;
+}
+
+#snackbarWarning1 {
+    background-color: aqua;
+}
+
+#snackbarWarning2 {
+    background-color: aqua;
+}
+
+#snackbarInfo {
+    background-color: deepskyblue;
+}
+
+/* show the snackbar when clicking on a button ( class added with JS)*/
+#snackbarsuccess1.show,
+#snackbarSuccess2.show,
+#snackbarWarning1.show,
+#snackbarWarning2.show,
+#snackbarInfo.show {
+    visibility: visible;
+    /* show the snackbar */
+
+    /* add animation: 0.5 sec to fade & out the snackbar, delay the fade out process 0.25sec */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* animation to fade the snackbar in  & out */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
